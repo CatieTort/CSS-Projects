@@ -3,6 +3,7 @@
 	// FUNCTIONALITY
 	perspective: 150rem;
 	-moz-perspective: 150rem;
+	-webkit-perspective: 150rem;
 	position: relative;
 	height: 50rem;
 	z-index: 0;
@@ -11,11 +12,13 @@
 		color: #fff;
 		font-size: 2rem;
 		height: 50rem;
+		-webkit-transition: all .8s ease;
 		transition: all .8s ease;
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
+		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 		border-radius: 3px;
 		box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
@@ -25,6 +28,7 @@
 		}
 
 		&--back {
+			-webkit-transform: rotateY(180deg);
 			transform: rotateY(180deg);
 
 			&-1 {
@@ -42,10 +46,12 @@
 	}
 
 	&:hover &__side--front {
+		-webkit-transform: rotateY(-180deg);
 		transform: rotateY(-180deg);
 	}
 
 	&:hover &__side--back {
+		-webkit-transform: rotateY(0deg);
 		transform: rotateY(0deg);
 	}
 
@@ -59,15 +65,27 @@
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 		clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 		&--1 {
-			background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
+			background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5-small.jpg);
+
+			@media (min-resolution: 192dpi) and (min-width: 37.5em),(min-width: 125em){
+				background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
+			}
 		}
 
 		&--2 {
-			background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/nat-6.jpg);
+			background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/nat-6-small.jpg);
+
+			@media (min-resolution: 192dpi) and (min-width: 37.5em),(min-width: 125em){
+				background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/nat-6.jpg);
+			}
 		}
 
 		&--3 {
-			background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/nat-7.jpg);
+			background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/nat-7-small.jpg);
+
+			@media (min-resolution: 192dpi) and (min-width: 37.5em),(min-width: 125em){
+				background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/nat-7.jpg);
+			}
 		}
 	}
 
